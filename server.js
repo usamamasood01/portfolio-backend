@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.post("/html-to-pdf", async (req, res) => {
   try {
-    const htmlContent = "<a href='https://example.com'>Click me!</a>";
+    const htmlContent = req.body.html;
 
     const browser = await puppeteer.launch({
       args: chromium.args,
